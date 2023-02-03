@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-bool isKPeriodic(const std::string& txt, int K)
+bool isKPeriodic(const std::string& txt, const int K)
 {
     if (K == 0)
     {
@@ -11,7 +11,10 @@ bool isKPeriodic(const std::string& txt, int K)
     }
         
     if (K < 0)
-        K = -K;
+    {
+        std::cout << "K < 0" << std::endl;
+        return false;
+    }
 
     if (K > txt.size())
     {
